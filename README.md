@@ -20,6 +20,7 @@ Direct manipulation of ODR register
 🧩 Modular Design
 Separate drivers for GPIO and USART
 Simple state_machine() for command handling
+
 🧠 Key Learnings
 Understanding UART as a byte-stream protocol
 Handling RXNE, TXE, and overrun conditions
@@ -28,6 +29,7 @@ Difference between:
 char[] vs const char *
 polling vs interrupt-based reception
 Safe string handling using strcmp()
+
 ⚙️ Hardware Setup
 🧠 MCU: STM32F407 Discovery Board
 🔌 Interface: ST-LINK Virtual COM Port / USB-UART
@@ -36,22 +38,26 @@ UART Pins (USART2)
 Pin	Function
 PA2	TX
 PA3	RX
+
 🧪 How It Works
 UART receives data one byte at a time
 Data is buffered until delimiter (\r)
 String is passed to state_machine()
 Command is parsed and action is executed
+
 🧾 Example
 Input (Tera Term):
 LEDON
 Output:
 LEDs ON
+
 🛠️ Future Improvements
 🔄 Interrupt-based UART RX
 🔁 Ring buffer implementation
 🧠 Command queue system
 📟 CLI with multiple commands
 ⚡ DMA-based UART
+
 📂 Project Structure
 /src
   ├── main.c
